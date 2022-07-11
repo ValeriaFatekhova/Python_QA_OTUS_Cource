@@ -8,6 +8,8 @@ class Triangle(Figure):
     def __init__(self, a, b, c):
         if a+b <= c or a+c <= b or c+b <= a:
             raise ValueError(f"impossible to create a triangle with sides {a}, {b}, {c}")
+        elif a <= 0 or b <= 0 or c <= 0:
+            raise ValueError(f"impossible to create a triangle with negative sides")
         else:
             self.a = a
             self.b = b

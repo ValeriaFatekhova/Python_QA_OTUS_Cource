@@ -5,9 +5,12 @@ class Square(Figure):
     name = "Square"
 
     def __init__(self, a):
-        self.a = a
-        self.area = self.calculate_area()
-        self.perimeter = self.calculate_perimeter()
+        if a < 0:
+            raise ValueError(f"impossible to create a square with negative side")
+        else:
+            self.a = a
+            self.area = self.calculate_area()
+            self.perimeter = self.calculate_perimeter()
 
     def calculate_area(self):
         return self.a*self.a
