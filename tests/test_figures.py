@@ -137,6 +137,25 @@ def test_circle_area_positive(circle, r):
 
 
 """Circle perimeter tests"""
+
 @pytest.mark.parametrize("r", [100000, 0])
 def test_circle_perimeter_positive(circle, r):
     assert circle.get_perimeter() == 2*pi*r, "Circle perimeter is incorrect"
+
+
+"""Add_area function tests"""
+
+@pytest.mark.parametrize("figure1, figure2", [
+    ("c", "b")
+])
+def test_add_area_positive(figure1, figure2):
+    pass
+
+@pytest.mark.parametrize("figure1, figure2", [
+    ("c", "b")
+])
+def test_add_area_negative(figure1, figure2):
+    pass
+
+
+

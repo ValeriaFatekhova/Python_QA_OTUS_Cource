@@ -8,16 +8,25 @@ from src.triangle import Triangle
 
 @pytest.fixture
 def triangle(a, b, c):
-    return Triangle(a, b, c)
+    triangle = Triangle(a, b, c)
+    yield triangle
+    del triangle
 
 @pytest.fixture
 def rectangle(a, b):
-    return Rectangle(a, b)
+    rectangle = Rectangle(a, b)
+    yield rectangle
+    del rectangle
 
 @pytest.fixture
 def square(a):
-    return Square(a)
+    square = Square(a)
+    yield square
+    del square
 
 @pytest.fixture
 def circle(r):
-    return Circle(r)
+    circle = Circle(r)
+    yield circle
+    del circle
+
