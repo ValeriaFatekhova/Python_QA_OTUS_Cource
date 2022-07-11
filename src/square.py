@@ -6,6 +6,11 @@ class Square(Figure):
 
     def __init__(self, a):
         self.a = a
-        self.area = a*a
-        self.perimeter = 4*a
+        self.area = self.calculate_area()
+        self.perimeter = self.calculate_perimeter()
 
+    def calculate_area(self):
+        return self.a*self.a
+
+    def calculate_perimeter(self):
+        return 4*self.a
