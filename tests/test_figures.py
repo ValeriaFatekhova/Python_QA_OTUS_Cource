@@ -15,7 +15,6 @@ from src.triangle import Triangle
 def test_triangle_creation_positive(a, b, c):
     Triangle(a, b, c)
 
-
 @pytest.mark.parametrize("a, b, c", [
     (3, 4, 15),
     (13, 4, 5),
@@ -145,17 +144,17 @@ def test_circle_perimeter_positive(circle, r):
 
 """Add_area function tests"""
 
-@pytest.mark.parametrize("figure1, figure2", [
-    ("c", "b")
-])
-def test_add_area_positive(figure1, figure2):
-    pass
+@pytest.mark.parametrize("figure", ["triangle", "circle", "rectangle", "square"])
+def test_add_area_positive(set_default_figure, figure):
+    sum_area = set_default_figure.add_area(set_default_figure)
+    assert sum_area == set_default_figure.get_area() * 2
 
-@pytest.mark.parametrize("figure1, figure2", [
-    ("c", "b")
-])
-def test_add_area_negative(figure1, figure2):
-    pass
+@pytest.mark.parametrize("figure", ["triangle", "circle", "rectangle", "square"])
+def test_add_area_negative(set_default_figure, figure):
+    class AnyObject:
+        pass
+    with pytest.raises(ValueError):
+        set_default_figure.add_area(AnyObject())
 
 
 
