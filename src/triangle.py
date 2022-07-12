@@ -14,11 +14,11 @@ class Triangle(Figure):
             self.a = a
             self.b = b
             self.c = c
-            self.perimeter = self.calculate_perimeter()
-            self.area = self.calculate_area()
 
-    def calculate_area(self):
+    @property
+    def area(self):
         return sqrt((self.perimeter*0.5)*(self.perimeter*0.5-self.a)*(self.perimeter*0.5-self.b)*(self.perimeter*0.5-self.c))
 
-    def calculate_perimeter(self):
+    @property
+    def perimeter(self):
         return self.a + self.b + self.c
