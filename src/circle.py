@@ -10,11 +10,19 @@ class Circle(Figure):
             raise ValueError(f"it is impossible to create a circle with a negative radius")
         else:
             self.r = r
-            self.area = self.calculate_area()
-            self.perimeter = self.calculate_perimeter()
+            # self.area = self.calculate_area()
+            # self.perimeter = self.calculate_perimeter()
 
-    def calculate_area(self):
+    @property
+    def area(self):
         return pi * self.r * self.r
 
-    def calculate_perimeter(self):
+    @property
+    def perimeter(self):
         return 2 * pi * self.r
+
+    # def calculate_area(self):
+    #     return pi * self.r * self.r
+    #
+    # def calculate_perimeter(self):
+    #     return 2 * pi * self.r
