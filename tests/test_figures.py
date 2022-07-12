@@ -82,7 +82,7 @@ def test_circle_creation_negative(r):
 ])
 def test_triangle_area_positive(triangle, a, b, c):
     p = (a+b+c)*0.5
-    assert triangle.get_area() == sqrt(p*(p-a)*(p-b)*(p-c)), "Triangle area is incorrect"
+    assert triangle.area == sqrt(p*(p-a)*(p-b)*(p-c)), "Triangle area is incorrect"
 
 
 """Triangle perimeter tests"""
@@ -91,7 +91,7 @@ def test_triangle_area_positive(triangle, a, b, c):
     (13, 14, 15),
 ])
 def test_triangle_perimeter_positive(triangle, a, b, c):
-    assert triangle.get_perimeter() == a+b+c, "Triangle perimeter is incorrect"
+    assert triangle.perimeter == a+b+c, "Triangle perimeter is incorrect"
 
 
 """Rectangle area tests"""
@@ -101,7 +101,7 @@ def test_triangle_perimeter_positive(triangle, a, b, c):
     (0, 0)
 ])
 def test_rectangle_area_positive(rectangle, a, b):
-    assert rectangle.get_area() == a*b, "Rectangle area is incorrect"
+    assert rectangle.area == a*b, "Rectangle area is incorrect"
 
 
 """Rectangle perimeter tests"""
@@ -111,35 +111,35 @@ def test_rectangle_area_positive(rectangle, a, b):
     (0, 0)
 ])
 def test_rectangle_perimeter_positive(rectangle, a, b):
-    assert rectangle.get_perimeter() == 2*a+2*b, "Rectangle perimeter is incorrect"
+    assert rectangle.perimeter == 2*a+2*b, "Rectangle perimeter is incorrect"
 
 
 """Square area tests"""
 
 @pytest.mark.parametrize("a", [1000, 0])
 def test_square_area_positive(square, a):
-    assert square.get_area() == a*a, "Square area is incorrect"
+    assert square.area == a*a, "Square area is incorrect"
 
 
 """Square perimeter tests"""
 
 @pytest.mark.parametrize("a", [1000, 0])
 def test_square_perimeter_positive(square, a):
-    assert square.get_perimeter() == 4*a, "Square perimeter is incorrect"
+    assert square.perimeter == 4*a, "Square perimeter is incorrect"
 
 
 """Circle area tests"""
 
 @pytest.mark.parametrize("r", [100000, 0])
 def test_circle_area_positive(circle, r):
-    assert circle.get_area() == pi*r*r, "Circle area is incorrect"
+    assert circle.area == pi*r*r, "Circle area is incorrect"
 
 
 """Circle perimeter tests"""
 
 @pytest.mark.parametrize("r", [100000, 0])
 def test_circle_perimeter_positive(circle, r):
-    assert circle.get_perimeter() == 2*pi*r, "Circle perimeter is incorrect"
+    assert circle.perimeter == 2*pi*r, "Circle perimeter is incorrect"
 
 
 """Add_area function tests"""
@@ -147,7 +147,7 @@ def test_circle_perimeter_positive(circle, r):
 @pytest.mark.parametrize("figure", ["triangle", "circle", "rectangle", "square"])
 def test_add_area_positive(set_default_figure, figure):
     sum_area = set_default_figure.add_area(set_default_figure)
-    assert sum_area == set_default_figure.get_area() * 2
+    assert sum_area == set_default_figure.area * 2
 
 @pytest.mark.parametrize("figure", ["triangle", "circle", "rectangle", "square"])
 def test_add_area_negative(set_default_figure, figure):
@@ -155,6 +155,3 @@ def test_add_area_negative(set_default_figure, figure):
         pass
     with pytest.raises(ValueError):
         set_default_figure.add_area(AnyObject())
-
-
-

@@ -10,8 +10,6 @@ class Rectangle(Figure):
         else:
             self.a = a
             self.b = b
-            # self.area = self.calculate_area()
-            # self.perimeter = self.calculate_perimeter()
 
     @property
     def area(self):
@@ -20,9 +18,3 @@ class Rectangle(Figure):
     @property
     def perimeter(self):
         return 2*self.a + 2*self.b
-
-    # def calculate_area(self):
-    #     return self.a*self.b
-    #
-    # def calculate_perimeter(self):
-    #     return 2*self.a + 2*self.b
