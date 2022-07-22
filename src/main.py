@@ -14,11 +14,10 @@ def create_user(user):
 
 
 def create_users_list(file_path):
-    jp = JsonParser()
-    users = []
+    """создает список пользователей в нужном формате из джейсон файла"""
 
-    for user in jp.get_from_file(file_path):
-        users.append(create_user(user))
+    jp = JsonParser()
+    users = [create_user(user) for user in jp.get_from_file(file_path)]
 
     return users
 
@@ -35,11 +34,10 @@ def create_book(book):
 
 
 def create_books_list(file_path):
-    cp = CSVParser()
-    books = []
+    """создает список книг в нужном формате из csv файла"""
 
-    for book in cp.get_from_file(file_path):
-        books.append(create_book(book))
+    cp = CSVParser()
+    books = [create_book(book) for book in cp.get_from_file(file_path)]
 
     return books
 
