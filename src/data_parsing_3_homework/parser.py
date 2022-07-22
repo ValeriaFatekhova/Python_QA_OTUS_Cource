@@ -1,5 +1,5 @@
-from src.csv_parser import CSVParser
-from src.json_parser import JsonParser
+from src.data_parsing_3_homework.csv_parser import CSVParser
+from src.data_parsing_3_homework.json_parser import JsonParser
 
 
 class Parser:

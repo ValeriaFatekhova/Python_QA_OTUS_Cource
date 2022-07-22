@@ -1,4 +1,4 @@
-from src.figure import Figure
+from src.figures_2_homework.figure import Figure
 from math import sqrt
 
 

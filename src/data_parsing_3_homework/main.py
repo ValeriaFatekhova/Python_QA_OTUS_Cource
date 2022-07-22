@@ -1,4 +1,4 @@
-from src.parser import Parser
+from src.data_parsing_3_homework.parser import Parser
 
 
 def create_user(user):
@@ -64,5 +64,5 @@ def create_result_json(data, file_path):
 
 
 if __name__ == "__main__":
-    res = hand_out_books(create_books_list("..\\data\\books.csv"), create_users_list("..\\data\\users.json"))
-    create_result_json(res, "..\\data\\result.json")
+    res = hand_out_books(create_books_list("../../data/books.csv"), create_users_list("../../data/users.json"))
+    create_result_json(res, "../../data/result.json")
