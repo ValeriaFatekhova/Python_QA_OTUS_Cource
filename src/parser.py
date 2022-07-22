@@ -28,18 +28,3 @@ class Parser:
             raise ValueError(f"Incorrect format of file. Function expects json or csv file")
 
         p.load_to_file(data, file_path)
-
-# def parser(get_from_file):
-#     def wrapper(*args, **kwargs):
-#         print(args[0].split(".")[-1])
-#         p = JsonParser()
-#         if args[0].split(".")[-1] == "json":
-#             p = JsonParser()
-#         if args[0].split(".")[-1] == "csv":
-#             p = CSVParser()
-#
-#         result = p.get_from_file(*args, **kwargs)
-#
-#         return result
-#
-#     return wrapper
