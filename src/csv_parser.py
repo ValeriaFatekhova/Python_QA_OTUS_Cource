@@ -7,9 +7,7 @@ class CSVParser:
     def get_from_file(self, file_path):
         with open(file_path, newline='') as f:
             reader = DictReader(f)
-            data = []
-            for row in reader:
-                data.append(row)
+            data = [row for row in reader]
         return data
 
     def load_to_file(self, data, fieldnames, file_path):

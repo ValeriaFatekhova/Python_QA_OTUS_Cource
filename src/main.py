@@ -1,5 +1,4 @@
-from src.csv_parser import CSVParser
-from src.json_parser import JsonParser
+from src.parser import Parser
 
 
 def create_user(user):
@@ -16,8 +15,8 @@ def create_user(user):
 def create_users_list(file_path):
     """создает список пользователей в нужном формате из джейсон файла"""
 
-    jp = JsonParser()
-    users = [create_user(user) for user in jp.get_from_file(file_path)]
+    p = Parser()
+    users = (create_user(user) for user in p.get_from_file(file_path))
 
     return users
 
@@ -36,8 +35,8 @@ def create_book(book):
 def create_books_list(file_path):
     """создает список книг в нужном формате из csv файла"""
 
-    cp = CSVParser()
-    books = [create_book(book) for book in cp.get_from_file(file_path)]
+    p = Parser()
+    books = (create_book(book) for book in p.get_from_file(file_path))
 
     return books
 
@@ -45,14 +44,14 @@ def create_books_list(file_path):
 def hand_out_books(books, users):
     """распределяет книги среди юзеров максимально поровну"""
 
-    res = []
-    n = len(books)
-    m = len(users)
-    for i in range(m):
-        res.append(dict(users[i]))
-        res[i]["books"] = []
-    for i in range(n):
-        res[i % m]["books"].append(books[i])
+    res = [dict(user) for user in users]
+    m = len(res)
+    i = 0
+    for book in books:
+        if "books" not in list(res[i % m].keys()):
+            res[i % m]["books"] = []
+        res[i % m]["books"].append(book)
+        i += 1
 
     return res
 
@@ -60,11 +59,10 @@ def hand_out_books(books, users):
 def create_result_json(data, file_path):
     """создает джейсон файл с результатами"""
 
-    jp = JsonParser()
-    jp.load_to_file(data, file_path)
+    p = Parser()
+    p.load_to_file(data, file_path)
 
 
 if __name__ == "__main__":
     res = hand_out_books(create_books_list("..\\data\\books.csv"), create_users_list("..\\data\\users.json"))
     create_result_json(res, "..\\data\\result.json")
-
