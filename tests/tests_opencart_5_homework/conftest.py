@@ -5,7 +5,7 @@ from selenium import webdriver
 def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome", help="browser for tests")
     parser.addoption("--driver", default="C:\\drivers\\", help="Path to folder with drivers")
-    parser.addoption("--url", default="http://localhost/index.php?route=common/home", help="Url for test opencart")
+    parser.addoption("--url", default="http://localhost/", help="Url for test opencart")
 
 
 @pytest.fixture(scope="function")
