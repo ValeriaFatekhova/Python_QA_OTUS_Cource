@@ -27,6 +27,8 @@ class HomePage:
         ("MP3 Players", "http://localhost/mp3-players"),
     ]
 
+    HOME_PAGE_URL = "http://localhost/index.php?route=common/home"
+
     TIMEOUT_FOR_ELEMENTS = 3
 
     def __init__(self, driver):
@@ -84,7 +86,7 @@ class HomePage:
             raise AssertionError(f"Element {locator} doesn't have link to Home page")
 
     def check_logo_link(self, url):
-        if self.get_link_by_locator(self.LOGO_LINK) != url:
+        if self.get_link_by_locator(self.LOGO_LINK) != self.HOME_PAGE_URL:
             raise AssertionError("Logo link is incorrect")
 
     def get_menu_items(self):

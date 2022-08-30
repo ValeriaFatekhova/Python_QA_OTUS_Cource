@@ -4,48 +4,49 @@ from tests.tests_opencart_5_homework.pages.admin_login_page import AdminLoginPag
 from tests.tests_opencart_5_homework.pages.catalog_page import CatalogPage
 from tests.tests_opencart_5_homework.pages.home_page import HomePage
 from tests.tests_opencart_5_homework.pages.product_page import ProductPage
+from tests.tests_opencart_5_homework.pages.user_login_page import UserLoginPage
 
-# """Home page tests"""
-#
-#
-# def test_home_page_logo(driver, url):
-#     home_page = HomePage(driver)
-#     home_page.open_home_page(url)
-#     home_page.is_logo()
-#     home_page.check_logo_link(url)
-#
-#
-# def test_home_page_menu(driver, url):
-#     home_page = HomePage(driver)
-#     home_page.open_home_page(url)
-#     home_page.is_menu()
-#     home_page.check_menu_items(home_page.get_menu_items())
-#
-#
-# def test_home_page_search(driver, url):
-#     home_page = HomePage(driver)
-#     home_page.open_home_page(url)
-#     home_page.is_search()
-#
-#
-# def test_home_page_cart(driver, url):
-#     home_page = HomePage(driver)
-#     home_page.open_home_page(url)
-#     home_page.is_cart()
-#
-#
-# def test_home_page_slideshow(driver, url):
-#     home_page = HomePage(driver)
-#     home_page.open_home_page(url)
-#     home_page.is_slideshow()
-#
-#
-# def test_home_page_content(driver, url):
-#     home_page = HomePage(driver)
-#     home_page.open_home_page(url)
-#     home_page.is_content()
-#
-#
+"""Home page tests"""
+
+
+def test_home_page_logo(driver, url):
+    home_page = HomePage(driver)
+    home_page.open_home_page(url)
+    home_page.is_logo()
+    home_page.check_logo_link(url)
+
+
+def test_home_page_menu(driver, url):
+    home_page = HomePage(driver)
+    home_page.open_home_page(url)
+    home_page.is_menu()
+    home_page.check_menu_items(home_page.get_menu_items())
+
+
+def test_home_page_search(driver, url):
+    home_page = HomePage(driver)
+    home_page.open_home_page(url)
+    home_page.is_search()
+
+
+def test_home_page_cart(driver, url):
+    home_page = HomePage(driver)
+    home_page.open_home_page(url)
+    home_page.is_cart()
+
+
+def test_home_page_slideshow(driver, url):
+    home_page = HomePage(driver)
+    home_page.open_home_page(url)
+    home_page.is_slideshow()
+
+
+def test_home_page_content(driver, url):
+    home_page = HomePage(driver)
+    home_page.open_home_page(url)
+    home_page.is_content()
+
+
 # """Catalog page tests"""
 #
 #
@@ -249,4 +250,35 @@ from tests.tests_opencart_5_homework.pages.product_page import ProductPage
 #     admin_page.is_forgotten_password_link()
 
 
-"""Admin login page tests"""
+# """Admin login page tests"""
+#
+#
+# def test_ul_firstname_field(driver, url):
+#     user_page = UserLoginPage(driver)
+#     user_page.open_user_login_page(url)
+#     user_page.is_first_name_field()
+#
+#
+# def test_ul_lastname_field(driver, url):
+#     user_page = UserLoginPage(driver)
+#     user_page.open_user_login_page(url)
+#     user_page.is_first_name_field()
+#
+#
+# def test_ul_email_field(driver, url):
+#     user_page = UserLoginPage(driver)
+#     user_page.open_user_login_page(url)
+#     user_page.is_email_field()
+#
+#
+# def test_ul_right_menu(driver, url):
+#     user_page = UserLoginPage(driver)
+#     user_page.open_user_login_page(url)
+#     user_page.is_right_menu()
+#     user_page.check_menu_items(user_page.get_menu_items())
+#
+#
+# def test_ul_continue_button(driver, url):
+#     user_page = UserLoginPage(driver)
+#     user_page.open_user_login_page(url)
+#     user_page.is_continue_button()

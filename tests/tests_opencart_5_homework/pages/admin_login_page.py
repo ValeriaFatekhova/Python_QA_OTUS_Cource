@@ -27,31 +27,31 @@ class AdminLoginPage:
         try:
             WebDriverWait(self.driver, self.TIMEOUT_FOR_ELEMENTS).until(EC.visibility_of_element_located(self.USER_NAME_FIELD))
         except TimeoutException:
-            raise AssertionError("User name field is not presented for product")
+            raise AssertionError("User name field is not presented on Admin login page")
 
     def is_password_field(self):
         try:
             WebDriverWait(self.driver, self.TIMEOUT_FOR_ELEMENTS).until(EC.visibility_of_element_located(self.PASSWORD_FIELD))
         except TimeoutException:
-            raise AssertionError("Password field is not presented for product")
+            raise AssertionError("Password field is not presented on Admin login page")
 
     def is_login_button(self):
         try:
             WebDriverWait(self.driver, self.TIMEOUT_FOR_ELEMENTS).until(EC.visibility_of_element_located(self.LOGIN_BUTTON))
         except TimeoutException:
-            raise AssertionError("Login button is not presented for product")
+            raise AssertionError("Login button is not presented on Admin login page")
 
     def is_forgotten_password_link(self):
         try:
             WebDriverWait(self.driver, self.TIMEOUT_FOR_ELEMENTS).until(EC.visibility_of_element_located(self.FORGOTTEN_PASSWORD))
         except TimeoutException:
-            raise AssertionError("Forgotten password link is not presented for product")
+            raise AssertionError("Forgotten password link is not presented on Admin login page")
 
     def is_admin_logo(self):
         try:
             WebDriverWait(self.driver, self.TIMEOUT_FOR_ELEMENTS).until(EC.visibility_of_element_located(self.ADMIN_LOGO))
         except TimeoutException:
-            raise AssertionError("Logo is not presented for product")
+            raise AssertionError("Logo is not presented on Admin login page")
 
     def get_link_by_locator(self, locator):
         try:
